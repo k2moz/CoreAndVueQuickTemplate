@@ -1,0 +1,5 @@
+AppVueTest.
+.vs
+AppVueTest/AppVueTest/node_modules
+AppVueTest/node_modules
+/AppVueTest/node_modules
