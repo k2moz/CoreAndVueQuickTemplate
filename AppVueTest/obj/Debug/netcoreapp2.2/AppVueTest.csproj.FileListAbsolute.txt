@@ -28,3 +28,4 @@ C:\Users\1\source\repos\AppVueTest\AppVueTest\obj\Debug\netcoreapp2.2\AppVueTest
 C:\Users\1\source\repos\AppVueTest\AppVueTest\obj\Debug\netcoreapp2.2\AppVueTest.pdb
 C:\Users\1\source\repos\AppVueTest\AppVueTest\obj\Debug\netcoreapp2.2\AppVueTest.csproj.CopyComplete
 C:\Users\1\source\repos\AppVueTest\AppVueTest\obj\Debug\netcoreapp2.2\AppVueTest.csprojAssemblyReference.cache
+C:\Users\1\source\repos\AppVueTest\AppVueTest\obj\Debug\netcoreapp2.2\Razor\Views\Home\YearApp.g.cshtml.cs

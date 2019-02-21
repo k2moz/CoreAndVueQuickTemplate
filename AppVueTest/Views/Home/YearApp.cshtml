@@ -1,0 +1,291 @@
+﻿
+@{
+    Layout = null;
+}
+<!-- component template -->
+<template id="year-app">
+    <div class="page ppp">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link icon-only panel-open" data-panel="left">
+                        <i class="icon icon-back"></i>
+                        <span class="ios-only">Back</span>
+                    </a>
+                </div>
+                <div class="title sliding"> {{title}} @*{{$f7route.url}}*@</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="row">
+                <div class="data-table data-table-init card col-35 desktop-20" style="margin:0;">
+                    <div class="card-header">
+                        <!-- Table links/actions -->
+                        <div class="data-table-links">
+                            <a class="link">Add</a>
+                            <!-- <a class="link">Remove</a> -->
+                        </div>
+                        <!-- Table actions -->
+                        <div class="data-table-actions">
+                            <!-- <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">sort</i>
+                              <i class="icon material-icons md-only">sort</i>
+                            </a>
+                            <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">more_vertical_round</i>
+                              <i class="icon material-icons md-only">more_vert</i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Доходы</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(income, index) of incomesAppData[0].incomes">
+                                    <td class="label-cell">{{income.title}}</td>
+                                </tr>
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Счета</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(bill, index) of incomesAppData[0].bills">
+                                    <td class="label-cell">{{bill.title}}</td>
+                                </tr>
+                            </tbody>
+
+                            <thead>
+                                <tr>
+                                    <th class="label-cell">Расходы</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(coast, index) of incomesAppData[0].coasts">
+                                    <td class="label-cell">{{coast.title}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="data-table myTable data-table-init card col-45 desktop-60" style="margin:0;">
+                    <div class="card-header">
+                        <!-- Table links/actions -->
+                        <div class="data-table-links">
+                            <!-- <a class="link">Add</a>
+                            <a class="link">Remove</a> -->
+                        </div>
+                        <!-- Table actions -->
+                        <div class="data-table-actions">
+                            <!-- <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">sort</i>
+                              <i class="icon material-icons md-only">sort</i>
+                            </a>
+                            <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">more_vertical_round</i>
+                              <i class="icon material-icons md-only">more_vert</i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+
+                            <table class="myTable">
+                                <thead>
+                                    <tr>
+                                        <th class="numeric-cell">Январь</th>
+                                        <th class="numeric-cell">Февраль</th>
+                                        <th class="numeric-cell">Март</th>
+                                        <th class="numeric-cell">Апрель</th>
+                                        <th class="numeric-cell">Май</th>
+                                        <th class="numeric-cell">Июнь</th>
+                                        <th class="numeric-cell">Июль</th>
+                                        <th class="numeric-cell">Август</th>
+                                        <th class="numeric-cell">Сентябрь</th>
+                                        <th class="numeric-cell">Октябрь</th>
+                                        <th class="numeric-cell">Ноябрь</th>
+                                        <th class="numeric-cell">Декабрь</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <template v-for="(income, index) of incomesAppData[0].incomes">
+                                            @*<td class="input-cell" v-for="(value, index) of income.values">
+                                                    <div class="input table-decimal-input">
+
+                                                        <input type="number" v-model="value"  min="-1000000" max="10000000" placeholder="Money">
+                                                    </div>
+                                                </td>*@
+
+                                            <td class="cell" v-for="(value, index) of income.values">
+                                                <div>{{value}}</div>
+                                            </td>
+                                        </template>
+                                    </tr>
+
+                                </tbody>
+
+                                <thead>
+                                    <tr>
+
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <template v-for="(bill, index) of incomesAppData[0].bills">
+                                            <td class="cell" v-for="(value, index) of bill.values">
+                                                <div>{{value}}</div>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </tbody>
+
+
+                                <thead>
+                                    <tr>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                        <th class="numeric-cell"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <template v-for="(coast, index) of incomesAppData[0].coasts">
+                                            <td class="cell" v-for="(value, index) of coast.values">
+                                                <div>{{value}}</div>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="data-table data-table-init card col-25 desktop-20" style="margin:0;">
+                    <div class="card-header">
+                        <!-- Table links/actions -->
+                        <div class="data-table-links">
+                            <p class="label">Доходы</p>
+                            @*<a class="link">Add</a>*@
+                            <!--<a class="link">Remove</a> -->
+                        </div>
+                        <!-- Table actions -->
+                        <div class="data-table-actions">
+                            <!-- <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">sort</i>
+                              <i class="icon material-icons md-only">sort</i>
+                            </a>
+                            <a class="link icon-only">
+                              <i class="icon f7-icons ios-only">more_vertical_round</i>
+                              <i class="icon material-icons md-only">more_vert</i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="card-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="label-cell">Доходы</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="label-cell" v-for="(income, index) of incomesAppData[0].incomes">
+                                            <div>{{income.sum}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <thead>
+                                    <tr>
+                                        <th class="label-cell">Счета</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="label-cell" v-for="(bill, index) of incomesAppData[0].bills">
+                                            <div>{{bill.sum}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <thead>
+                                    <tr>
+                                        <th class="label-cell">Расходы</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cell" v-for="(coast, index) of incomesAppData[0].coasts">
+                                            <div>{{coast.sum}}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                       
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- <div class="page-content">
+              <a @@click="openAlert">Open Alert</a>
+              <div class="list simple-list">
+                <ul>
+                  {{#each names}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div> -->
+
+
+        </div>
+</template>
+<!-- component styles -->
+<style>
+    .red-link {
+        color: red;
+    }
+</style>
+<!-- rest of component data and methods -->
+<script>
+                                                                                // script must return component object
+
+                                                                            //var fu = function () {
+
+                                                                            //}
+</script>

@@ -20,6 +20,11 @@ namespace AppVueTest.Controllers
             return View();
         }
 
+        public IActionResult YearApp()
+        {
+            return PartialView();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
